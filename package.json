@@ -1,0 +1,24 @@
+{
+  "name": "wavez-search-api",
+  "version": "1.0.0",
+  "description": "waves-search! Scripts Start the application npm start",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon src/server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "mocha": "^8.3.2",
+    "morgan": "^1.10.0",
+    "nodeman": "^1.1.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
