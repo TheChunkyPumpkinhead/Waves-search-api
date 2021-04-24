@@ -1,6 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
 const wavezRouter = require('./wavez/wavez-router');
+const cors = require('cors');
+const { CLIENT_ORIGIN } = require('./config');
+
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN
+  })
+);
 
 
 const app = express();

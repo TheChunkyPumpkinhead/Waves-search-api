@@ -11,7 +11,7 @@ const WavezRouter = express.Router();
 const jsonParser = express.json();
 
 
-const serializeJotz =wavez => ({
+const serializeWavez=wavez => ({
   id: wavez .id,
   date_published: wavez .date_published,
   title: xss(wavez .title),
@@ -28,7 +28,7 @@ WavezRouter
     
     WavezService.getAllNotes(knexInstance)
       .then(wavez => {
-        res.json(wavez .map(serializeJotz));
+        res.json(wavez .map(serializeWavez));
       })
       .catch(next);
   })
@@ -57,7 +57,7 @@ WavezRouter
           .status(201)
           
           .location(path.posix.join(req.originalUrl, `/${wavez .id}`))
-          .json(serializeJotz(wavez ));
+          .json(serializeWavez(wavez ));
       })
       .catch(next);
   });

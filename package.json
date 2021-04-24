@@ -1,24 +1,42 @@
 {
   "name": "wavez-search-api",
   "version": "1.0.0",
-  "description": "waves-search! Scripts Start the application npm start",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server",
-    "dev": "nodemon src/server"
+    "test": "mocha --require test/setup.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "predeploy": "npm audit",
+    "deploy": "git push heroku main",
+    "postdeploy": "npm run migrate:production",
+    "migrate": "postgrator --config postgrator-config.js",
+    "migrate:production": "heroku run npm run migrate"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "12.18.3"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mocha": "^8.3.2",
+    "helmet": "^4.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.19",
+    "migrate": "^1.7.0",
     "morgan": "^1.10.0",
-    "nodeman": "^1.1.2",
-    "winston": "^3.3.3"
+    "pg": "^7.18.2",
+    "postgrator-cli": "^3.3.0",
+    "xss": "^1.0.8"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "nodemon": "^2.0.6",
+    "supertest": "^5.0.0"
   }
 }
