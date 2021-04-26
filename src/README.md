@@ -67,3 +67,72 @@ Front-End: HTML5, CSS3, JavaScript ES6, React
 Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
 Development Environment: Heroku, DBeaver
 5. Screenshots
+7. Front-end Structure - React Components Map
+Index.js (stateless)
+App.js (stateful)
+Landing.js (stateless)
+Login.js (stateful) - user table
+SignUp.js (stateful) - user table
+SiteList.js (stateful) - locations table, user_locations table, ratings table
+Account.js (stateful) - user_locations table, comments table
+Search.js (stateful) - locations table
+Navbar.js (stateful) - user table
+Noteform.js (stateful) - comments table
+StarRating.js (stateful) - ratings table
+8. Back-end Structure - Business Objects
+Users (database table)
+
+id (auto-generated)
+email (email validation)
+password (at least 8 chars, at least one alpha and a special character validation)
+Locations (database table)
+
+id (auto-generated)
+user_id (foreign key - users table(id))
+image (image)
+title (note title)
+content (note text)
+keyword (keyword for maps)
+is_public (boolean default 0)
+Ratings (database table)
+
+id (auto-generated)
+user_id (foreign key to match users table (id))
+location_id (foreign key to match locations table (id))
+stars (integer between 1 & 5)
+User_Locations (database table)
+
+id (auto-generated)
+user_id (foreign key to match users table (id))
+location_id (foreign key to match locations table (id))
+Comments (database table)
+
+id (auto-generated)
+user_location_id (foreign key to match locations table (id))
+title (note title)
+content (note text) *author_id ((foreign key to match users table (id)))
+8. API Documentation
+├── /auth
+│ └── POST │ ├── /login ├── /users │ └── GET / │ ├── / │ ├── /:user_id │ └── POST / │ ├── / ├── /comments │ └── GET │ ├── / │ ├── /:location_id │ └── POST │ ├── /:location_id │ └── DELETE │ ├── /:location_id ├── /location │ └── GET │ ├── / │ ├── /keyword/:searchTerm │ └── POST │ ├── /
+├── /ratings │ └── GET │ ├── / │ ├── /:location_id │ └── POST │ ├── / ├── /user_locations │ └── GET │ ├── / │ ├── /user │ ├── /:loc_id │ └── POST │ ├── /
+
+Development Roadmap
+This is v1.0 of the app, but future enhancements are expected to include:
+
+Ability to edit sites user has posted
+Ablity to delete sites user has posted
+Ability to edit saved comments
+Ability to delete sites user has saved to account
+How to run it
+Use command line to navigate into the project folder and run the following in terminal
+
+Local React scripts
+To install the react project ===> npm install
+To run react (on port 3000) ===> npm start
+To run tests ===> npm run test
+Local Node scripts
+To install the node project ===> npm install
+To migrate the database ===> npm run migrate -- 1
+To run Node server (on port 8000) ===> npm run dev
+To run tests ===> npm run test
+Seed Command: psql -U chriscampos -d wavez_search -f ./seeds/seed.wavez_search.sql
