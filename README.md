@@ -1,10 +1,7 @@
-Secret Camp Sites Capstone
+wavez_search
 This is a members only application for people who crave seclusion. Members can post their favorite secret camping sites,leave ratings, and save sites to their account where they can leave themselves notes.
 
-1. Working Prototype
-You can access a working prototype of the React app here: https://secret-camping.vercel.app/ and Node app here: https://secret-camping.herokuapp.com/
 
-You can access repositories here: React app: https://github.com/CourtneyCarson/secret-camping-sites-client Node app: https://github.com/CourtneyCarson/secret-camping-sites-server
 
 2. User Stories
 This app is for two types of users: a visitor and a logged-in user

@@ -7,6 +7,7 @@ const { JWT_SECRET } = require('../config');
 
 const AuthService = {
   getUserWithUserName(db, email) {
+    console.log(db)
     return db('users')
       .where('email', email)
       .first();

@@ -24,11 +24,13 @@ authRouter
         return res.status(400).json({
           error: `Missing '${key}' in request body`
         });
+        // console.log("hello 4")
     AuthService.getUserWithUserName(
       req.app.get('db'),
       loginUser.email
     )
       .then(dbUser => {
+        console.log("hello")
         if (!dbUser)
           return res.status(400).json({
             error: `Incorrect Email or Password`,
