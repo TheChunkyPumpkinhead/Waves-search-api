@@ -26,7 +26,7 @@ CREATE TABLE ratings (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   location_id INTEGER REFERENCES locations(id) ON DELETE CASCADE,
   stars INTEGER,
-  unique (user_id, location_id),
+  unique (user_id, location_id)
 );
 
 -- create new table with user_id & location_id to post into 
