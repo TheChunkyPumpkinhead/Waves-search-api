@@ -1,10 +1,10 @@
 # Capstone Project Title (to do now)
-
+### Wavez Search
 This is a members only application for people who love to surf. Members can post their favorite surf spots ,leave ratings, and save sites to their account where they can leave themselves notes.
 
 ### 1. Working Prototype (to do later)
 
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+(Example) You can access a working prototype of the React app here: http://wavez-search-git-main-thechunkypumpkinhead.vercel.app and Node app here:   https://wavez-search.herokuapp.com/
 
 ### 2. User Stories (to do now)
 
@@ -79,11 +79,20 @@ Development Environment: Heroku, DBeaver
 
 ### 5. Wireframes (to do now)
 
-(Example) Landing Page
-:-------------------------:
-![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
-Register Page
-![Register Page](/github-images/wireframes/register-page-wireframe.png)
+Landing Page
+![Landing Page](/github-images/screenshots/landing.png)
+
+Sign Up Page
+![Sign Up Page](/github-images/screenshots/sign-up.png)
+
+Log In Page
+![Log In Page](/github-images/screenshots/log-in.png)
+
+Accounts Page
+![Account Page](/github-images/screenshots/account.png)
+
+Site List Page
+![Site List Page](/github-images/screenshots/site-list.png)
 
 ### 6. Front-end Structure - React Components Map (to do later)
 
@@ -142,63 +151,13 @@ Comments (database table)
 ├── /ratings │ └── GET │ ├── / │ ├── /:location_id │ └── POST │ ├── / ├── /user_locations │ └── GET │ ├── / │ ├── /user │ ├── /:loc_id │ └── POST │ ├── /
 ```
 
-##### POST `/api/auth/login`
-
-```js
-    // req.body
-    {
-        "user_name": "demo@gmail.com",
-        "password": "Password1"
-    }
-
-    // res.body
-    {
-    "authToken": String,
-        "userId": 1
-    }
-```
-
-##### POST `/api/users/`
-
-```js
-    // req.body
-    {
-        "user_name": "demo@gmail.com",
-        "password": "123456"
-    }
-
-
-    // res.body
-    {
-        "id": 1,
-        "user_name": "demo@gmail.com"
-    }
-```
-
-### 9. Screenshots (to do later)
-
-Landing Page
-![Landing Page](/github-images/screenshots/landing.png)
-
-Sign Up Page
-![Sign Up Page](/github-images/screenshots/sign-up.png)
-
-Log In Page
-![Log In Page](/github-images/screenshots/log-in.png)
-
-Accounts Page
-![Account Page](/github-images/screenshots/account.png)
-
-Site List Page
-![Site List Page](/github-images/screenshots/site-list.png)
-
-### 10. Development Roadmap (to do later)
+### 9. Development Roadmap (to do later)
 
 This is v1.0 of the app, but future enhancements are expected to include:
 
 - (Example) add more functionality
 
-### 11. How to run it (done)
+### 10. How to run it (done)
 
 Use command line to navigate into the project folder and run the following in terminal
 
